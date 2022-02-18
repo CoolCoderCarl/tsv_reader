@@ -7,6 +7,6 @@ services:
     network_mode: host
     ports:
       - "8080:8080"
-    command: bash -c "uvicorn api:api --reload"
+    command: bash -c "uvicorn api:api --reload --port 8080"
     volumes:
       - ./signatures.tsv:/api/signatures.tsv
