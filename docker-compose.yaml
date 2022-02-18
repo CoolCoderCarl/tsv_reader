@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: fastapi-app
+    network_mode: host
+    ports:
+      - "8080:8080"
+    command: bash -c "uvicorn api:api --reload"
+    volumes:
+      - ./signatures.tsv:/api/signatures.tsv
